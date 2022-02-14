@@ -3,6 +3,9 @@ from setup_db import db
 
 
 class Movie(db.Model):
+    """
+    Сущность SQLAlchemy, описывающая таблицу с фильмами
+    """
     __tablename__ = 'movie'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
@@ -17,6 +20,10 @@ class Movie(db.Model):
 
 
 class MovieSchema(Schema):
+    """
+    Объект пакета marshmallow
+    Схема для сериализации/десериализации данных о фильмах
+    """
     id = fields.Int()
     title = fields.String()
     description = fields.String()
@@ -28,22 +35,36 @@ class MovieSchema(Schema):
 
 
 class Director(db.Model):
+    """
+    Сущность SQLAlchemy, описывающая таблицу с режиссерами
+    """
     __tablename__ = 'director'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
 
 
 class DirectorSchema(Schema):
+    """
+    Объект пакета marshmallow
+    Схема для сериализации/десериализации данных о режиссерах
+    """
     id = fields.Int()
     name = fields.String()
 
 
 class Genre(db.Model):
+    """
+    Сущность SQLAlchemy, описывающая таблицу с жанарми
+    """
     __tablename__ = 'genre'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
 
 
 class GenreSchema(Schema):
+    """
+    Объект пакета marshmallow
+    Схема для сериализации/десериализации данных о жанрах
+    """
     id = fields.Int()
     name = fields.String()
