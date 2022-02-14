@@ -1,3 +1,3 @@
 from flask_restx import Namespace
 
-movie_ns = Namespace('movies')
+director_ns = Namespace('directors')

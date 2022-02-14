@@ -1,3 +1,3 @@
 from flask_restx import Namespace
 
-movie_ns = Namespace('movies')
+genre_ns = Namespace('genres')
